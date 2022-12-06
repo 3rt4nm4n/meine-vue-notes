@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Watchers</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Onder Ertan {{isActive === 'active' ? 'is Active' : 'is not Active'}}</h1>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>    
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                isActive: 'not active'
+            },
+            watch:{
+                isActive: function(newValue){
+                    console.log('Sending an email - '+newValue)
+                }
+                //whenever isActive is 'active' this will be printed in console log.It is watching it.
+            }
+        })
+    </script>
+    </body>
+</html>

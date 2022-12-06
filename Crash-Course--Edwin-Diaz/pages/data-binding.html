@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Data Binding</title>
+    </head>
+    <body>
+        <div id="app">
+            <a v-bind:href="url">{{url}}</a>
+            <h1 v-bind:data="dynamicId">{{dynamicId}}</h1>
+            <!--Use v-bind or : before binding a value from script to have it displayed.-->
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>  
+        let vm = new Vue({ 
+            el: "#app",
+            data: {
+                dynamicId:51,
+                url: "https://www.github.com/3rt4nm4n"               
+            }
+        })
+    </script>
+    </body>
+</html>

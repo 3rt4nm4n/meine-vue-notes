@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>String Interpolation</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2>{{message}}</h2>
+            <h2>{{number + 1}}</h2>
+            <h2>{{isActive ? 'is Active' : 'is Not Active'}}</h2> 
+            <!--if isActive == True then print is Active, else print is Not Active-->
+            <h2>{{message.split('').reverse('').join('')}}</h2>
+            <!--Message will be printed in reverse order.
+                Split message to letters H e l l o,
+                Reverse order o l l e H,
+                Join them back olleH -->
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    /*
+        You can change the values in Vue model, vm, through Console in Inspect of the web page.
+        To do that you can type vm.message = "Hallo" for example 
+        vm.isActive = false
+    */       
+        let vm = new Vue({ 
+            el: "#app",
+            data: {
+                message : "Hello",
+                number: 10,
+                isActive: false
+            }
+        })
+    </script>
+    </body> 
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Control Structures</title>
+        <!--AKA Conditional Rendering-->
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-if="isActive">{{name}}</h1>
+            <!--if isActive is false name will not show up, if true it will be shown-->
+            <h1 v-else-if="name==='3rt4nm4n'">Hello Onder</h1>
+            <!--if name is 3rt4nm4n it will print Hello Onder-->
+            <h1 v-else>NO USER</h1>
+            <!--if isActive is false and name isnt '3rt4nm4n' above line will show-->
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>    
+        new Vue({
+            el: "#app",
+            data: {
+                isActive:false,
+                name : "3rt4nm4n"
+            }
+        })
+    </script>
+    </body>
+</html>

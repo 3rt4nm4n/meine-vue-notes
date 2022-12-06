@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Inline Style Binding</title>
+    </head>
+    <body>
+        <div id="app">
+           <div :style="{color:'red', fontSize:fontSize+'px'}">
+            {{ message }}
+           </div>
+           <!--vm.fontSize=70 will change the font size of the message.-->
+
+           <div :style="styleObject">
+            {{message}}
+           </div>
+           <!--You can pass whole styles in style as styleObject-->
+           <div :style="[styleObject, styleObject2]">
+            {{message}}
+           </div>
+           <!--Style Object 2 is over writing Style Object-->
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>    
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                message : "Hello",
+                fontSize:30,
+                styleObject: {
+                    color: 'blue',
+                    fontSize: '30px'
+                },
+                styleObject2:{
+                    color: 'yellow',
+                    fontSize: '75px'
+                }
+            }
+        })
+    </script>
+    </body>
+</html>
